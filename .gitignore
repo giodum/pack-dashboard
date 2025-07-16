@@ -1,7 +1,11 @@
-test-results
+# Cursor
+.cursor/
+.cursorrules
+
+# Dependencies
 node_modules
 
-# Output
+# Build Output
 .output
 .vercel
 .netlify
@@ -9,9 +13,16 @@ node_modules
 /.svelte-kit
 /build
 
+# Test
+coverage
+test-results
+
 # OS
 .DS_Store
 Thumbs.db
+
+# Debug
+npm-debug.log*
 
 # Env
 .env
