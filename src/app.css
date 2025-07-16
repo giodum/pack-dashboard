@@ -1,2 +1,61 @@
-@import "tailwindcss";
-@plugin '@tailwindcss/typography';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@theme {
+  --color-coral-50: #fff5ee;
+  --color-coral-100: #ffe5d0;
+  --color-coral-200: #ffd1a6;
+  --color-coral-300: #ffb47a;
+  --color-coral-400: #ff9a54;
+  --color-coral-500: #ff8b45;
+  --color-coral-600: #e06e2e;
+  --color-coral-700: #b94f1d;
+  --color-coral-800: #8c3913;
+  --color-coral-900: #5c220a;
+  --color-coral-950: #2e1105;
+
+  --font-primary: "Arimo", "sans-serif";
+  --font-secondary: "Open Sans", "sans-serif";
+}
+
+@layer base {
+  * {
+    @apply box-border;
+  }
+
+  html {
+    @apply min-h-full w-full overflow-x-hidden;
+  }
+
+  html:has(body.overflow-y-hidden) {
+    @apply overflow-y-hidden;
+  }
+
+  /* add font-sans */
+  body {
+    @apply min-h-full w-full overflow-x-hidden font-primary; 
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  a {
+    @apply opacity-100 transition-all;
+  }
+
+  a:hover {
+    @apply opacity-75;
+  }
+
+  a:visited,
+  a:active {
+    @apply font-primary;
+  }
+
+  img,
+  media,
+  svg {
+    @apply block h-auto max-w-full;
+  }
+}
