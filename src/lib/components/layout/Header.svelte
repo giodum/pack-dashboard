@@ -3,7 +3,7 @@
   import UserMenu from "../menu/UserMenu.svelte";
 </script>
 
-<header class="px-2 shadow-md md:px-6">
+<header class="z-1 px-2 shadow-md md:px-6">
   <a href="#main-content" class="sr-only focus:not-sr-only">
     Skip to main content
   </a>

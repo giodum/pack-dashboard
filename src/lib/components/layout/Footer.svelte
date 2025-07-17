@@ -1,4 +1,4 @@
-<footer class="px-4 py-6 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)] md:px-6">
+<footer class="z-1 px-4 py-6 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)] md:px-6">
   <div
     class="mx-auto flex w-full flex-col-reverse items-center gap-4 md:flex-row md:justify-between md:gap-2"
   >
