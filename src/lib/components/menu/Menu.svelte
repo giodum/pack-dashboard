@@ -51,7 +51,7 @@
         lg:gap-1
         lg:bg-transparent
         xl:gap-2
-        {isOpen ? 'flex' : 'hidden'}
+        {isOpen ? 'flex' : 'pointer-events-none opacity-0'}
         lg:flex
       "
     >

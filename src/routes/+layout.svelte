@@ -3,6 +3,7 @@
   import Footer from "$src/lib/components/layout/Footer.svelte";
   import Header from "$src/lib/components/layout/Header.svelte";
   import Loader from "$src/lib/components/shared/Loader.svelte";
+  import "../app.css";
 
   interface Props {
     children?: import("svelte").Snippet;
