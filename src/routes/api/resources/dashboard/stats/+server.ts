@@ -1,4 +1,4 @@
-import type { RequestHandler } from "./$types";
+import type { RequestHandler } from "../$types";
 import dashboardData from "$src/mock/dashboard.json";
 import { json } from "@sveltejs/kit";
 

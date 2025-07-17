@@ -1,6 +1,7 @@
 <script lang="ts">
   import Loader from "../shared/Loader.svelte";
   import type { DashboardData } from "$lib/types/dashboard";
+  import Button from "../shared/Button.svelte";
 
   let data = $state<DashboardData | null>(null);
   let loading = $state(true);
@@ -12,7 +13,7 @@
 
     try {
       // call to server-side API
-      const response = await fetch("/api/resources/dashboard");
+      const response = await fetch("/api/resources/dashboard/stats");
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
@@ -35,14 +36,13 @@
 {#if loading}
   <Loader />
 {:else if error}
-  <div class="error">
-    Error: {error}
-    <button onclick={fetchDashboard}>Retry</button>
+  <div>
+    <p class="mb-4 text-red-700">Error: {error}</p>
+    <Button label="Retry" onClick={fetchDashboard} />
   </div>
 {:else if data}
   <div>
     <h1>Dashboard</h1>
-    <button onclick={fetchDashboard}>Refresh</button>
     <pre>{JSON.stringify(data, null, 2)}</pre>
   </div>
 {/if}
