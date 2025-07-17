@@ -10,7 +10,7 @@
   let { label, disabled = false, href, target, onClick }: Props = $props();
 
   let classes = $derived(
-    `bg-coral-500 hover:bg-coral-600 hover:opacity-100 inline-block rounded-lg px-6 py-3 font-semibold text-white shadow transition-colors${
+    `cursor-pointer bg-coral-500 hover:bg-coral-600 hover:opacity-100 inline-block rounded-lg px-3 py-2 font-semibold text-white shadow transition-colors${
       disabled ? " opacity-50 pointer-events-none" : ""
     }`
   );
