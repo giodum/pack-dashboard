@@ -4,6 +4,7 @@
   import Header from "$src/lib/components/layout/Header.svelte";
   import Loader from "$src/lib/components/shared/Loader.svelte";
   import "../app.css";
+  import { fade } from "svelte/transition";
 
   interface Props {
     children?: import("svelte").Snippet;
@@ -21,6 +22,7 @@
       <main
         id="main-content"
         class="relative m-4 my-6 flex-grow rounded-lg bg-white p-3 shadow-[0_0_6px_rgba(0,0,0,0.3)] md:m-0 md:mx-auto md:w-[90%] md:p-6 lg:my-12 lg:w-[85%]"
+        in:fade={{ duration: 200 }}
       >
         {@render children?.()}
       </main>
