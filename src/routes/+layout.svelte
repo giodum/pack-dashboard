@@ -14,7 +14,7 @@
 
 <div class="3xl:mx-auto 3xl:max-w-screen-3xl flex h-screen flex-col">
   <Header />
-  <main class="relative flex-grow">
+  <main id="main-content" class="relative flex-grow">
     {#if navigating.to}
       <Loader />
     {:else}
