@@ -52,7 +52,8 @@
         lg:bg-transparent
         xl:gap-2
         {isOpen ? 'flex' : 'pointer-events-none opacity-0'}
-        lg:flex
+        lg:pointer-events-auto
+        lg:flex lg:opacity-100
       "
     >
       <!-- Close menu button (only visible on mobile when menu is open) -->
