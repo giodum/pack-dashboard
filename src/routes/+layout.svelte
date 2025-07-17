@@ -12,7 +12,7 @@
   let { children }: Props = $props();
 </script>
 
-<div class="flex h-screen flex-col">
+<div class="3xl:mx-auto 3xl:max-w-screen-3xl flex h-screen flex-col">
   <Header />
   <main class="relative flex-grow">
     {#if navigating.to}
