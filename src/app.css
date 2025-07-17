@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 @theme {
   --color-coral-50: #fff5ee;
@@ -34,7 +32,7 @@
 
   /* add font-sans */
   body {
-    @apply min-h-full w-full overflow-x-hidden font-primary; 
+    @apply font-primary min-h-full w-full overflow-x-hidden;
     -webkit-text-size-adjust: 100%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

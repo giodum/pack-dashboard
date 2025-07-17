@@ -1,6 +1,6 @@
 <!-- Page Metadata -->
 <svelte:head>
-  <title>Dashboard - Pack</title>
+  <title>Feedbacks - Pack</title>
 </svelte:head>
 
-DASHBOARD
+FEEDBACKS

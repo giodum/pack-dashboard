@@ -1,7 +1,25 @@
 <script lang="ts">
+  import { navigating } from "$app/state";
+  import Footer from "$src/lib/components/layout/Footer.svelte";
+  import Header from "$src/lib/components/layout/Header.svelte";
+  import Loader from "$src/lib/components/shared/Loader.svelte";
   import "../app.css";
 
-  let { children } = $props();
+  interface Props {
+    children?: import("svelte").Snippet;
+  }
+
+  let { children }: Props = $props();
 </script>
 
-{@render children()}
+<div class="flex h-screen flex-col">
+  <Header />
+  <main class="relative flex-grow">
+    {#if navigating.to}
+      <Loader />
+    {:else}
+      {@render children?.()}
+    {/if}
+  </main>
+  <Footer />
+</div>
