@@ -40,7 +40,7 @@
       <li class="mr-2 -mb-px last:mr-0">
         <button
           type="button"
-          class={`mr-4 inline-flex cursor-pointer items-center border-b-2 py-2 text-sm font-medium text-slate-500 transition-colors duration-200 focus:outline-none
+          class={`focus-visible:ring-coral-500 mr-4 inline-flex cursor-pointer items-center border-b-2 py-2 text-sm font-medium text-slate-500 transition-colors duration-200 focus:outline-none focus-visible:ring-2
           ${
             item.disabled
               ? "!cursor-auto border-transparent opacity-50"
