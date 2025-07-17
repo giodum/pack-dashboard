@@ -1,5 +1,6 @@
 <script lang="ts">
   import Menu from "./Menu.svelte";
+  import Icon from "@iconify/svelte";
 </script>
 
 <header class="px-2 shadow-md md:px-6">
