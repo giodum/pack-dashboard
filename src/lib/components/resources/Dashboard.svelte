@@ -1,7 +1,8 @@
 <script lang="ts">
   import Loader from "../shared/Loader.svelte";
+  import type { DashboardData } from "$lib/types/dashboard";
 
-  let data = $state(null);
+  let data = $state<DashboardData | null>(null);
   let loading = $state(true);
   let error = $state<string | null>(null);
 
