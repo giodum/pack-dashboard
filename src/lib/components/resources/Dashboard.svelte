@@ -57,31 +57,35 @@
   });
 </script>
 
-{#if dashboardLoading}
-  <Loader />
-{:else if dashboardError}
-  <div>
-    <p class="mb-4 text-red-700">Dashboard Error: {dashboardError}</p>
-    <Button label="Retry" onClick={fetchDashboard} />
+<div class="flex h-full flex-col">
+  <div class="relative flex-grow">
+    {#if dashboardLoading}
+      <Loader />
+    {:else if dashboardError}
+      <div>
+        <p class="mb-4 text-red-700">Dashboard Error: {dashboardError}</p>
+        <Button label="Retry" onClick={fetchDashboard} />
+      </div>
+    {:else if dashboardData}
+      <div>
+        <h1>Dashboard</h1>
+        <pre>{JSON.stringify(dashboardData, null, 2)}</pre>
+      </div>
+    {/if}
   </div>
-{:else if dashboardData}
-  <div>
-    <h1>Dashboard</h1>
-    <pre>{JSON.stringify(dashboardData, null, 2)}</pre>
+  <div class="relative flex-grow">
+    {#if usageLoading}
+      <Loader />
+    {:else if usageError}
+      <div>
+        <p class="mb-4 text-red-700">Usage Error: {usageError}</p>
+        <Button label="Retry Usage" onClick={fetchUsage} />
+      </div>
+    {:else if usageData}
+      <div>
+        <h2>Usage</h2>
+        <pre>{JSON.stringify(usageData, null, 2)}</pre>
+      </div>
+    {/if}
   </div>
-{/if}
-
-<!-- Usage Data Section -->
-{#if usageLoading}
-  <Loader />
-{:else if usageError}
-  <div>
-    <p class="mb-4 text-red-700">Usage Error: {usageError}</p>
-    <Button label="Retry Usage" onClick={fetchUsage} />
-  </div>
-{:else if usageData}
-  <div>
-    <h2>Usage</h2>
-    <pre>{JSON.stringify(usageData, null, 2)}</pre>
-  </div>
-{/if}
+</div>

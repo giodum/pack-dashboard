@@ -10,6 +10,6 @@ export const GET: RequestHandler = async () => {
   // const response = await fetch('https://backend-endpoint/resources/dashboard');
   // const data = await response.json();
 
-  await new Promise((resolve) => setTimeout(resolve, 1000));
+  await new Promise((resolve) => setTimeout(resolve, 1500));
   return json(usageData as UsageData);
 };
