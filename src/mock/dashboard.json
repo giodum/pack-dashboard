@@ -1,0 +1,69 @@
+{
+  "totalUsers": 100,
+  "activeUsersAccessRate": 37,
+  "totalResources": 1150,
+  "resourcesUtilized": 700,
+  "resourcesVariation": 4,
+  "completionRate": 45,
+  "completionRateVariation": -10,
+  "uniqueAccessValue1": 395,
+  "uniqueAccessValue2": 582,
+  "uniqueAccessVariation": -10,
+  "resourcesByCategory": [
+    { "label": "category 1", "value": 650 },
+    { "label": "category 2", "value": 300 },
+    { "label": "category 3", "value": 200 }
+  ],
+  "mostUsedResource": [
+    {
+      "slug": "how_to_lead_new_teams",
+      "name": "How to lead new teams",
+      "trend": "+"
+    },
+    { "slug": "how_to_be_more_direct", "name": "How to be more direct" },
+    {
+      "slug": "the_secret_to_giving_great_feedback",
+      "name": "The secret to giving great feedback",
+      "trend": "+"
+    },
+    {
+      "slug": "conflict_resolution",
+      "name": "Conflict resolution",
+      "trend": "-"
+    },
+    {
+      "slug": "how_to_stay_motivated",
+      "name": "How to stay motivated",
+      "trend": "+"
+    },
+    { "slug": "work_life_balance", "name": "Work life balance", "trend": "-" }
+  ],
+  "updatedContentSeries": [
+    { "month": "Jan", "value": 80 },
+    { "month": "Feb", "value": 95 },
+    { "month": "Mar", "value": 110 },
+    { "month": "Apr", "value": 125 },
+    { "month": "May", "value": 140 },
+    { "month": "Jun", "value": 160 },
+    { "month": "Jul", "value": 170 },
+    { "month": "Aug", "value": 180 },
+    { "month": "Sep", "value": 190 },
+    { "month": "Oct", "value": 200 },
+    { "month": "Nov", "value": 210 },
+    { "month": "Dec", "value": 220 }
+  ],
+  "usageContentSeries": [
+    { "month": "Jan", "value": 100 },
+    { "month": "Feb", "value": 120 },
+    { "month": "Mar", "value": 90 },
+    { "month": "Apr", "value": 150 },
+    { "month": "May", "value": 130 },
+    { "month": "Jun", "value": 40 },
+    { "month": "Jul", "value": 60 },
+    { "month": "Aug", "value": 100 },
+    { "month": "Sep", "value": 160 },
+    { "month": "Oct", "value": 100 },
+    { "month": "Nov", "value": 130 },
+    { "month": "Dec", "value": 160 }
+  ]
+}
