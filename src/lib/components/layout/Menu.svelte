@@ -48,8 +48,9 @@
         lg:w-auto lg:flex-row
         lg:items-stretch
         lg:justify-start
-        lg:gap-4
+        lg:gap-1
         lg:bg-transparent
+        xl:gap-2
         {isOpen ? 'flex' : 'hidden'}
         lg:flex
       "
@@ -72,7 +73,7 @@
           <a
             role="menuitem"
             href={item.href}
-            class="focus-visible:ring-coral-500 font-primary hover:text-coral-500 focus:text-coral-500 data-[active=true]:text-coral-500 data-[active=true]:border-coral-500 my-2 inline-block w-full border-b-2 border-transparent px-3 py-1 text-lg font-semibold text-slate-500 opacity-100 transition-all focus:outline-none focus-visible:ring-2 lg:my-0 lg:w-auto lg:py-4 lg:text-lg xl:text-xl"
+            class="focus-visible:ring-coral-500 font-primary hover:text-coral-500 focus:text-coral-500 data-[active=true]:text-coral-500 data-[active=true]:border-coral-500 my-2 inline-block w-full border-b-2 border-transparent py-1 text-lg font-semibold text-slate-500 opacity-100 transition-all focus:outline-none focus-visible:ring-2 lg:my-0 lg:w-auto lg:px-2 lg:py-4 lg:text-lg xl:px-3"
             aria-current={page.url.pathname === item.href ? "page" : undefined}
             data-active={page.url.pathname === item.href}
             tabindex="0"
