@@ -1,0 +1,101 @@
+[
+  {
+    "user": {
+      "name": "Alice Johnson",
+      "role": "Student",
+      "photo": "/static/user-placeholder.jpg"
+    },
+    "accessedContent": "Lesson 1: Introduction to Python",
+    "openedOn": "11/12/2024 09:15",
+    "closedOn": "11/12/2024 10:00",
+    "provider": "mentor"
+  },
+  {
+    "user": {
+      "name": "Bob Smith",
+      "role": "Teacher",
+      "photo": "/static/user-placeholder.jpg"
+    },
+    "accessedContent": "Document: Syllabus.pdf",
+    "openedOn": "11/12/2024 11:55",
+    "closedOn": "11/12/2024 12:30",
+    "provider": "pack"
+  },
+  {
+    "user": {
+      "name": "Carol Lee",
+      "role": "Admin",
+      "photo": "/static/user-placeholder.jpg"
+    },
+    "accessedContent": "Video: Welcome Message",
+    "openedOn": "11/12/2024 13:00",
+    "closedOn": "11/12/2024 13:07",
+    "provider": "pack"
+  },
+  {
+    "user": {
+      "name": "David Brown",
+      "role": "Student",
+      "photo": "/static/user-placeholder.jpg"
+    },
+    "accessedContent": "Lesson 2: Variables and Data Types",
+    "openedOn": "11/12/2024 14:00",
+    "closedOn": "11/12/2024 14:07",
+    "provider": "mentor"
+  },
+  {
+    "user": {
+      "name": "Eve Wilson",
+      "role": "Admin",
+      "photo": "/static/user-placeholder.jpg"
+    },
+    "accessedContent": "Video: Welcome Message",
+    "openedOn": "11/12/2024 15:00",
+    "closedOn": "11/12/2024 15:07",
+    "provider": "pack"
+  },
+  {
+    "user": {
+      "name": "Frank Davis",
+      "role": "Student",
+      "photo": "/static/user-placeholder.jpg"
+    },
+    "accessedContent": "Lesson 3: Functions and Loops",
+    "openedOn": "11/12/2024 16:00",
+    "closedOn": "11/12/2024 16:07",
+    "provider": "mentor"
+  },
+  {
+    "user": {
+      "name": "Grace Miller",
+      "role": "Admin",
+      "photo": "/static/user-placeholder.jpg"
+    },
+    "accessedContent": "Document: Syllabus.pdf",
+    "openedOn": "11/12/2024 17:00",
+    "closedOn": "11/12/2024 17:07",
+    "provider": "mentor"
+  },
+  {
+    "user": {
+      "name": "Hank Johnson",
+      "role": "Student",
+      "photo": "/static/user-placeholder.jpg"
+    },
+    "accessedContent": "Lesson 4: Lists and Dictionaries",
+    "openedOn": "11/12/2024 18:00",
+    "closedOn": "11/12/2024 18:07",
+    "provider": "mentor"
+  },
+  {
+    "user": {
+      "name": "Ivy Brown",
+      "role": "Admin",
+      "photo": "/static/user-placeholder.jpg"
+    },
+    "accessedContent": "Video: Welcome Message",
+    "openedOn": "11/12/2024 19:00",
+    "closedOn": "11/12/2024 19:07",
+    "provider": "pack"
+  }
+]
