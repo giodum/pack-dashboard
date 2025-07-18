@@ -4,6 +4,7 @@
   import Button from "../shared/Button.svelte";
   import type { UsageData } from "$src/lib/types/usage";
   import GaugeChart from "../shared/charts/GaugeChart.svelte";
+  import PieChart from "../shared/charts/PieChart.svelte";
 
   let dashboardData = $state<DashboardData | null>(null);
   let dashboardLoading = $state(true);
@@ -56,6 +57,13 @@
     fetchDashboard();
     fetchUsage();
   });
+
+  const pieData = [
+    { value: 1048, name: "Documents" },
+    { value: 735, name: "Videos" },
+    { value: 580, name: "Lessons" },
+    { value: 484, name: "Archive" }
+  ];
 </script>
 
 <div class="flex h-full flex-col">
@@ -76,6 +84,12 @@
           value={37}
         />
         <GaugeChart label="Resources Utilized" color="#ff6e76" value={65} />
+        <PieChart
+          label="Resource Distribution"
+          data={pieData}
+          width="320px"
+          height="320px"
+        />
         <pre>{JSON.stringify(dashboardData, null, 2)}</pre>
       </div>
     {/if}
