@@ -13,9 +13,54 @@
   let dateFrom = $state("");
   let dateTo = $state("");
 
+  // get unique providers from usageData
   let providers = $derived([
     ...new Set(usageData.map((item) => item.provider))
   ]);
+
+  // function to parse date strings in MM/DD/YYYY HH:MM format
+  function parseDateTime(dateTimeString: string): Date {
+    const [datePart, timePart] = dateTimeString.split(" ");
+    const [month, day, year] = datePart.split("/");
+    const [hours, minutes] = timePart.split(":");
+    return new Date(
+      parseInt(year),
+      parseInt(month) - 1,
+      parseInt(day),
+      parseInt(hours),
+      parseInt(minutes)
+    );
+  }
+
+  // filter content access data by provider and date range
+  let filteredUsageData = $derived(() => {
+    let filtered = usageData;
+
+    // filter by provider
+    if (provider && provider !== "") {
+      filtered = filtered.filter((item) => item.provider === provider);
+    }
+
+    // filter by date range
+    if (dateFrom || dateTo) {
+      filtered = filtered.filter((item) => {
+        const itemDate = parseDateTime(item.openedOn);
+        const fromDate = dateFrom ? new Date(dateFrom) : null;
+        const toDate = dateTo ? new Date(dateTo + "T23:59:59") : null;
+
+        if (fromDate && toDate) {
+          return itemDate >= fromDate && itemDate <= toDate;
+        } else if (fromDate) {
+          return itemDate >= fromDate;
+        } else if (toDate) {
+          return itemDate <= toDate;
+        }
+        return true;
+      });
+    }
+
+    return filtered;
+  });
 </script>
 
 <div class="w-full py-8">
@@ -69,5 +114,5 @@
     </div>
   </div>
 
-  <UsageContentAccessTable {usageData} />
+  <UsageContentAccessTable usageData={filteredUsageData()} />
 </div>
