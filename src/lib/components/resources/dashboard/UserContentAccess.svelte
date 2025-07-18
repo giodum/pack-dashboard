@@ -64,10 +64,8 @@
 </script>
 
 <div class="w-full py-8">
-  <h1 class="mb-3 text-base font-semibold text-gray-900">
-    User Content Access
-  </h1>
-
+  <h1 class="mb-6 text-2xl font-semibold text-gray-900">User Content Access</h1>
+  <!-- filters -->
   <div class="mb-4 flex flex-col flex-wrap gap-4 md:flex-row">
     <div class="flex flex-grow flex-col flex-wrap gap-4 md:flex-row">
       <div class="flex-1">
@@ -79,7 +77,7 @@
             bind:value={provider}
           >
             <option value="">All</option>
-            {#each providers as option}
+            {#each providers as option (option)}
               <option value={option}>{option}</option>
             {/each}
           </select>
@@ -114,5 +112,6 @@
     </div>
   </div>
 
+  <!-- data table -->
   <UsageContentAccessTable usageData={filteredUsageData()} />
 </div>
