@@ -5,6 +5,7 @@
   import type { UsageData } from "$src/lib/types/usage";
   import Stats from "./dashboard/Stats.svelte";
   import StatsSummary from "./dashboard/StatsSummary.svelte";
+  import MostlyUsedResource from "./dashboard/MostlyUsedResource.svelte";
 
   let dashboardData = $state<DashboardData | null>(null);
   let dashboardLoading = $state(true);
@@ -72,7 +73,7 @@
       <div>
         <Stats {dashboardData} />
         <StatsSummary {dashboardData} />
-        <pre>{JSON.stringify(dashboardData, null, 2)}</pre>
+        <MostlyUsedResource {dashboardData} />
       </div>
     {/if}
   </div>
