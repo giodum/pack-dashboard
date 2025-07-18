@@ -6,6 +6,7 @@
   import GaugeChart from "../shared/charts/GaugeChart.svelte";
   import PieChart from "../shared/charts/PieChart.svelte";
   import LineChart from "../shared/charts/LineChart.svelte";
+  import Stats from "./dashboard/Stats.svelte";
 
   let dashboardData = $state<DashboardData | null>(null);
   let dashboardLoading = $state(true);
@@ -58,19 +59,6 @@
     fetchDashboard();
     fetchUsage();
   });
-
-  const pieData = [
-    { value: 1048, name: "Documents" },
-    { value: 735, name: "Videos" },
-    { value: 580, name: "Lessons" },
-    { value: 484, name: "Archive" }
-  ];
-
-  const lineXAxis = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
-  const lineSeries = [
-    { name: "Email", data: [120, 132, 101, 134, 90, 230, 210] },
-    { name: "Affiliate", data: [220, 182, 191, 234, 290, 330, 310] }
-  ];
 </script>
 
 <div class="flex h-full flex-col">
@@ -85,27 +73,7 @@
     {:else if dashboardData}
       <div>
         <h1>Dashboard</h1>
-        <GaugeChart
-          label="Active Users Access Rate"
-          color="#92cff4"
-          value={37}
-        />
-        <GaugeChart label="Resources Utilized" color="#ff6e76" value={65} />
-        <PieChart
-          label="Resource Distribution"
-          data={pieData}
-          colors={["#ff8b45", "#ff9a54", "#ffb47a", "#ffd1a6"]}
-          width="320px"
-          height="320px"
-        />
-        <LineChart
-          label="Weekly Traffic"
-          xAxis={lineXAxis}
-          series={lineSeries}
-          colors={["#5470C6", "#91CC75"]}
-          width="600px"
-          height="400px"
-        />
+        <Stats {dashboardData} />
         <pre>{JSON.stringify(dashboardData, null, 2)}</pre>
       </div>
     {/if}
