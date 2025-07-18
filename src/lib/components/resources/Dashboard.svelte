@@ -3,6 +3,7 @@
   import type { DashboardData } from "$lib/types/dashboard";
   import Button from "../shared/Button.svelte";
   import type { UsageData } from "$src/lib/types/usage";
+  import GaugeChart from "../shared/charts/GaugeChart.svelte";
 
   let dashboardData = $state<DashboardData | null>(null);
   let dashboardLoading = $state(true);
@@ -58,7 +59,7 @@
 </script>
 
 <div class="flex h-full flex-col">
-  <div class="relative flex-grow">
+  <div class="relative min-h-32 flex-grow">
     {#if dashboardLoading}
       <Loader />
     {:else if dashboardError}
@@ -69,11 +70,20 @@
     {:else if dashboardData}
       <div>
         <h1>Dashboard</h1>
+        <GaugeChart
+          label="Active Users Access Rate"
+          value={60}
+          color="#FF6E76"
+          min={0}
+          max={100}
+          width="300px"
+          height="300px"
+        />
         <pre>{JSON.stringify(dashboardData, null, 2)}</pre>
       </div>
     {/if}
   </div>
-  <div class="relative flex-grow">
+  <div class="relative min-h-32 flex-grow">
     {#if usageLoading}
       <Loader />
     {:else if usageError}
