@@ -3,10 +3,8 @@
   import type { DashboardData } from "$lib/types/dashboard";
   import Button from "../shared/Button.svelte";
   import type { UsageData } from "$src/lib/types/usage";
-  import GaugeChart from "../shared/charts/GaugeChart.svelte";
-  import PieChart from "../shared/charts/PieChart.svelte";
-  import LineChart from "../shared/charts/LineChart.svelte";
   import Stats from "./dashboard/Stats.svelte";
+  import StatsSummary from "./dashboard/StatsSummary.svelte";
 
   let dashboardData = $state<DashboardData | null>(null);
   let dashboardLoading = $state(true);
@@ -72,12 +70,13 @@
       </div>
     {:else if dashboardData}
       <div>
-        <h1>Dashboard</h1>
         <Stats {dashboardData} />
+        <StatsSummary {dashboardData} />
         <pre>{JSON.stringify(dashboardData, null, 2)}</pre>
       </div>
     {/if}
   </div>
+  <hr class="text-slate-200" />
   <div class="relative min-h-32 flex-grow">
     {#if usageLoading}
       <Loader />
@@ -88,7 +87,6 @@
       </div>
     {:else if usageData}
       <div>
-        <h2>Usage</h2>
         <pre>{JSON.stringify(usageData, null, 2)}</pre>
       </div>
     {/if}
