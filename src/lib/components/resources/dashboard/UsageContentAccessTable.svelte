@@ -3,8 +3,6 @@
     Datatable,
     Pagination,
     RowCount,
-    RowsPerPage,
-    Search,
     TableHandler,
     Th,
     ThSort,
@@ -88,13 +86,6 @@
 </script>
 
 <Datatable {table}>
-  <div class="mb-4 flex items-center justify-between gap-4">
-    <Search
-      {table}
-      class="!w-full !max-w-xs !rounded !border !border-gray-300 !px-2 !py-1"
-    />
-    <RowsPerPage {table} class="!ml-2" />
-  </div>
   <table class="table w-full">
     <thead>
       <tr>

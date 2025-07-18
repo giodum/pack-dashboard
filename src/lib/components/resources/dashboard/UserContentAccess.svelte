@@ -2,6 +2,7 @@
   import type { UsageData } from "$src/lib/types/usage";
   import UsageContentAccessTable from "./UsageContentAccessTable.svelte";
   import Button from "$lib/components/shared/Button.svelte";
+  import Icon from "@iconify/svelte";
 
   interface Props {
     usageData: UsageData;
@@ -12,9 +13,13 @@
   let dateFrom = $state("");
   let dateTo = $state("");
 
-  let providerOptions = $derived(() =>
-    Array.from(new Set(usageData.map((u) => u.provider)))
-  );
+  let providerOptions = $derived(() => {
+    const options = Array.from(
+      new Set((usageData ?? []).map((u) => u.provider))
+    );
+    console.log("DEBUG providerOptions inside $derived:", options, usageData);
+    return options;
+  });
 </script>
 
 <div class="w-full py-8">
@@ -22,48 +27,54 @@
     User Content Access
   </h1>
 
-  {providerOptions}
-  <div class="mb-4 flex flex-wrap items-end gap-4">
-    <div>
-      <label
-        for="provider-select"
-        class="mb-1 block text-xs font-medium text-gray-700">Provider</label
-      >
-      <select
-        id="provider-select"
-        class="rounded border px-2 py-1"
-        bind:value={provider}
-      >
-        <option value="">All</option>
-        {#each providerOptions as option}
-          <option value={option}>{option}</option>
-        {/each}
-      </select>
+  <!-- DEBUG: Remove after checking -->
+  <div class="mb-2 text-xs text-gray-500">
+    providerOptions: {JSON.stringify(providerOptions)}<br />
+    usageData: {JSON.stringify(usageData)}
+  </div>
+
+  <div class="mb-4 flex flex-col flex-wrap gap-4 md:flex-row">
+    <div class="flex flex-grow flex-col flex-wrap gap-4 md:flex-row">
+      <div class="flex-1">
+        <label for="provider-select" class="sr-only">Provider</label>
+        <div class="relative w-full">
+          <select
+            id="provider-select"
+            class="focus:border-coral-500 focus:ring-coral-200 w-full appearance-none rounded-lg border border-slate-300 bg-white py-2 pr-8 pl-3 text-slate-900 placeholder-slate-400 transition focus:ring-2 focus:outline-none"
+            bind:value={provider}
+          >
+            <option value="">All</option>
+            {#each providerOptions as option}
+              <option value={option}>{option}</option>
+            {/each}
+          </select>
+          <span
+            class="pointer-events-none absolute top-1/2 right-3 -translate-y-1/2 text-slate-400"
+          >
+            <Icon icon="mdi:chevron-down" width="14" />
+          </span>
+        </div>
+      </div>
+      <div class="flex-1">
+        <label for="date-from" class="sr-only">From</label>
+        <input
+          id="date-from"
+          type="date"
+          class="focus:border-coral-500 focus:ring-coral-200 w-full rounded-lg border border-slate-300 bg-white py-2 pr-3 pl-3 text-slate-900 placeholder-slate-400 transition focus:ring-2 focus:outline-none"
+          bind:value={dateFrom}
+        />
+      </div>
+      <div class="flex-1">
+        <label for="date-to" class="sr-only">To</label>
+        <input
+          id="date-to"
+          type="date"
+          class="focus:border-coral-500 focus:ring-coral-200 w-48 w-full rounded-lg border border-slate-300 bg-white py-2 pr-3 pl-3 text-slate-900 placeholder-slate-400 transition focus:ring-2 focus:outline-none"
+          bind:value={dateTo}
+        />
+      </div>
     </div>
     <div>
-      <label
-        for="date-from"
-        class="mb-1 block text-xs font-medium text-gray-700">From</label
-      >
-      <input
-        id="date-from"
-        type="date"
-        class="rounded border px-2 py-1"
-        bind:value={dateFrom}
-      />
-    </div>
-    <div>
-      <label for="date-to" class="mb-1 block text-xs font-medium text-gray-700"
-        >To</label
-      >
-      <input
-        id="date-to"
-        type="date"
-        class="rounded border px-2 py-1"
-        bind:value={dateTo}
-      />
-    </div>
-    <div class="ml-auto">
       <Button label="Download" onClick={() => {}} />
     </div>
   </div>
