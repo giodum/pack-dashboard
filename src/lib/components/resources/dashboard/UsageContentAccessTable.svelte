@@ -67,7 +67,14 @@
     }
   ];
 
-  const table = new TableHandler([], {
+  const table = new TableHandler<{
+    user: UsageEntry["user"];
+    accessed_content: string;
+    opened_on: string;
+    closed_on: string;
+    provider: string;
+    actions: string;
+  }>([], {
     highlight: true,
     rowsPerPage: 10
   });
@@ -87,9 +94,9 @@
   <table class="table w-full">
     <thead>
       <tr>
-        {#each tableFields as field}
+        {#each tableFields as field (field.field)}
           {#if field.sortable}
-            <ThSort {table} field={field.field as Field<any>}
+            <ThSort {table} field={field.field as Field<string>}
               >{field.label}</ThSort
             >
           {:else}
@@ -99,13 +106,32 @@
       </tr>
     </thead>
     <tbody>
-      {#each table.rows as row}
+      {#each table.rows as row (row.user.id)}
         <tr>
           <td><UserCell user={row.user} /></td>
           <td>{row.accessed_content}</td>
           <td>{row.opened_on}</td>
           <td>{row.closed_on}</td>
-          <td>{row.provider}</td>
+          <td>
+            <span
+              class="rounded-full border px-2 py-0.5 text-xs font-semibold"
+              style="
+                background-color: transparent;
+                color: {row.provider === 'pack'
+                ? '#ff7f50'
+                : row.provider === 'mentor'
+                  ? '#22c55e'
+                  : '#374151'};
+                border-color: {row.provider === 'pack'
+                ? '#ff7f50'
+                : row.provider === 'mentor'
+                  ? '#22c55e'
+                  : '#e5e7eb'};
+              "
+            >
+              {row.provider}
+            </span>
+          </td>
           <td>
             <button aria-label="Action" class="rounded p-1 hover:bg-gray-100">
               <Icon icon="mdi:dots-horizontal" width="20" />

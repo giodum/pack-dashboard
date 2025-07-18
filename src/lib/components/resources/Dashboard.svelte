@@ -4,8 +4,6 @@
   import Button from "../shared/Button.svelte";
   import type { UsageData } from "$src/lib/types/usage";
   import Stats from "./dashboard/Stats.svelte";
-  import StatsSummary from "./dashboard/StatsSummary.svelte";
-  import MostlyUsedResource from "./dashboard/MostlyUsedResource.svelte";
   import UserContentAccess from "./dashboard/UserContentAccess.svelte";
 
   let dashboardData = $state<DashboardData | null>(null);

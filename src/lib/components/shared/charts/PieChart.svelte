@@ -61,7 +61,7 @@
 <div class="flex w-full flex-row items-center">
   <Chart {options} {width} {height} />
   <div class="ml-6 flex flex-col space-y-2">
-    {#each data as item, i}
+    {#each data as item, i (item.name)}
       <div class="flex items-center space-x-2">
         <span
           style="display:inline-block;width:16px;height:16px;background:{colors[

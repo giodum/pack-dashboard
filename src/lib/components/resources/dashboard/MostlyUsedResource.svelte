@@ -1,10 +1,7 @@
 <script lang="ts">
-  import type { DashboardData, MostUsedResource } from "$lib/types/dashboard";
+  import type { DashboardData } from "$lib/types/dashboard";
   import Icon from "@iconify/svelte";
-  interface Props {
-    dashboardData: DashboardData;
-  }
-  let { dashboardData }: Props = $props();
+  export let dashboardData: DashboardData;
 
   function getTrendIcon(trend?: string) {
     if (trend === "+") {
@@ -22,7 +19,7 @@
     Mostly Used resources
   </h2>
   <ul class="grid grid-cols-1 gap-x-4 gap-y-1 lg:grid-cols-2">
-    {#each resources as resource}
+    {#each resources as resource (resource.slug)}
       <li class="flex items-center justify-between py-0.5">
         <a
           class="hover:text-coral-400 flex-1 truncate text-base font-semibold text-gray-900 underline transition-colors duration-150"
