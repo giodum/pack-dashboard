@@ -13,25 +13,15 @@
   let dateFrom = $state("");
   let dateTo = $state("");
 
-  let providerOptions = $derived(() => {
-    const options = Array.from(
-      new Set((usageData ?? []).map((u) => u.provider))
-    );
-    console.log("DEBUG providerOptions inside $derived:", options, usageData);
-    return options;
-  });
+  let providers = $derived([
+    ...new Set(usageData.map((item) => item.provider))
+  ]);
 </script>
 
 <div class="w-full py-8">
   <h1 class="mb-3 text-base font-semibold text-gray-900">
     User Content Access
   </h1>
-
-  <!-- DEBUG: Remove after checking -->
-  <div class="mb-2 text-xs text-gray-500">
-    providerOptions: {JSON.stringify(providerOptions)}<br />
-    usageData: {JSON.stringify(usageData)}
-  </div>
 
   <div class="mb-4 flex flex-col flex-wrap gap-4 md:flex-row">
     <div class="flex flex-grow flex-col flex-wrap gap-4 md:flex-row">
@@ -44,7 +34,7 @@
             bind:value={provider}
           >
             <option value="">All</option>
-            {#each providerOptions as option}
+            {#each providers as option}
               <option value={option}>{option}</option>
             {/each}
           </select>
