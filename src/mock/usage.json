@@ -3,7 +3,7 @@
     "user": {
       "name": "Alice Johnson",
       "role": "Student",
-      "photo": "/static/user-placeholder.jpg"
+      "photo": "/user-placeholder.jpg"
     },
     "accessedContent": "Lesson 1: Introduction to Python",
     "openedOn": "11/12/2024 09:15",
@@ -14,7 +14,7 @@
     "user": {
       "name": "Bob Smith",
       "role": "Teacher",
-      "photo": "/static/user-placeholder.jpg"
+      "photo": "/user-placeholder.jpg"
     },
     "accessedContent": "Document: Syllabus.pdf",
     "openedOn": "11/12/2024 11:55",
@@ -25,7 +25,7 @@
     "user": {
       "name": "Carol Lee",
       "role": "Admin",
-      "photo": "/static/user-placeholder.jpg"
+      "photo": "/user-placeholder.jpg"
     },
     "accessedContent": "Video: Welcome Message",
     "openedOn": "11/12/2024 13:00",
@@ -36,7 +36,7 @@
     "user": {
       "name": "David Brown",
       "role": "Student",
-      "photo": "/static/user-placeholder.jpg"
+      "photo": "/user-placeholder.jpg"
     },
     "accessedContent": "Lesson 2: Variables and Data Types",
     "openedOn": "11/12/2024 14:00",
@@ -47,7 +47,7 @@
     "user": {
       "name": "Eve Wilson",
       "role": "Admin",
-      "photo": "/static/user-placeholder.jpg"
+      "photo": "/user-placeholder.jpg"
     },
     "accessedContent": "Video: Welcome Message",
     "openedOn": "11/12/2024 15:00",
@@ -58,7 +58,7 @@
     "user": {
       "name": "Frank Davis",
       "role": "Student",
-      "photo": "/static/user-placeholder.jpg"
+      "photo": "/user-placeholder.jpg"
     },
     "accessedContent": "Lesson 3: Functions and Loops",
     "openedOn": "11/12/2024 16:00",
@@ -69,7 +69,7 @@
     "user": {
       "name": "Grace Miller",
       "role": "Admin",
-      "photo": "/static/user-placeholder.jpg"
+      "photo": "/user-placeholder.jpg"
     },
     "accessedContent": "Document: Syllabus.pdf",
     "openedOn": "11/12/2024 17:00",
@@ -80,7 +80,7 @@
     "user": {
       "name": "Hank Johnson",
       "role": "Student",
-      "photo": "/static/user-placeholder.jpg"
+      "photo": "/user-placeholder.jpg"
     },
     "accessedContent": "Lesson 4: Lists and Dictionaries",
     "openedOn": "11/12/2024 18:00",
@@ -91,7 +91,7 @@
     "user": {
       "name": "Ivy Brown",
       "role": "Admin",
-      "photo": "/static/user-placeholder.jpg"
+      "photo": "/user-placeholder.jpg"
     },
     "accessedContent": "Video: Welcome Message",
     "openedOn": "11/12/2024 19:00",

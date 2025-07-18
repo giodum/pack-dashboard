@@ -6,6 +6,7 @@
   import Stats from "./dashboard/Stats.svelte";
   import StatsSummary from "./dashboard/StatsSummary.svelte";
   import MostlyUsedResource from "./dashboard/MostlyUsedResource.svelte";
+  import UserContentAccess from "./dashboard/UserContentAccess.svelte";
 
   let dashboardData = $state<DashboardData | null>(null);
   let dashboardLoading = $state(true);
@@ -86,7 +87,7 @@
       </div>
     {:else if usageData}
       <div>
-        <pre>{JSON.stringify(usageData, null, 2)}</pre>
+        <UserContentAccess {usageData} />
       </div>
     {/if}
   </div>
