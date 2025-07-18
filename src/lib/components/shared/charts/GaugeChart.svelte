@@ -20,16 +20,16 @@
     min = 0,
     max = 100,
     unit = "%",
-    width = "100%",
-    height = "400px"
+    width = "250px",
+    height = "250px"
   }: Props = $props();
 
   const options: EChartsOption = $derived({
     series: [
       {
         type: "gauge" as const,
-        startAngle: 200,
-        endAngle: -20,
+        startAngle: 220,
+        endAngle: -40,
         min,
         max,
         progress: {
@@ -58,9 +58,12 @@
           show: false
         },
         detail: {
-          valueAnimation: false,
-          offsetCenter: [0, "60%"],
-          formatter: unit ? `{value} ${unit}` : "{value}"
+          color: color,
+          fontSize: 46,
+          formatter: unit ? `{value} ${unit}` : "{value}",
+          fontWeight: "bolder",
+          valueAnimation: true,
+          offsetCenter: [0, "-5%"]
         },
         data: [
           {
@@ -75,7 +78,7 @@
 <div class="flex flex-col items-center">
   <Chart {options} {width} {height} />
   {#if label}
-    <div class="font-lg mb-2 text-center text-slate-400">
+    <div class="-mt-8 text-center text-xl font-bold text-slate-400">
       {label}
     </div>
   {/if}

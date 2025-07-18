@@ -72,13 +72,10 @@
         <h1>Dashboard</h1>
         <GaugeChart
           label="Active Users Access Rate"
-          value={60}
-          color="#FF6E76"
-          min={0}
-          max={100}
-          width="300px"
-          height="300px"
+          color="#92cff4"
+          value={37}
         />
+        <GaugeChart label="Resources Utilized" color="#ff6e76" value={65} />
         <pre>{JSON.stringify(dashboardData, null, 2)}</pre>
       </div>
     {/if}
