@@ -72,8 +72,6 @@
     {:else if dashboardData}
       <div>
         <Stats {dashboardData} />
-        <StatsSummary {dashboardData} />
-        <MostlyUsedResource {dashboardData} />
       </div>
     {/if}
   </div>

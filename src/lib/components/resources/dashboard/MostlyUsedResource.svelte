@@ -17,11 +17,11 @@
   const resources = dashboardData.mostUsedResource;
 </script>
 
-<div class="mb-6">
+<div class="w-full">
   <h2 class="mb-3 text-base font-semibold text-slate-400">
     Mostly Used resources
   </h2>
-  <ul class="grid grid-cols-1 gap-x-4 gap-y-1 sm:grid-cols-2">
+  <ul class="grid grid-cols-1 gap-x-4 gap-y-1 lg:grid-cols-2">
     {#each resources as resource}
       <li class="flex items-center justify-between py-0.5">
         <a

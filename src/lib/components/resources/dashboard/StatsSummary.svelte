@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { DashboardData } from "../../../types/dashboard";
+  import type { DashboardData } from "$lib/types/dashboard";
   import Icon from "@iconify/svelte";
   interface Props {
     dashboardData: DashboardData;
@@ -30,19 +30,21 @@
 </script>
 
 <div
-  class="flex flex-col divide-y divide-gray-200 overflow-hidden rounded-xl bg-white md:flex-row md:divide-x md:divide-y-0"
+  class="flex flex-col divide-y divide-gray-200 overflow-hidden rounded-xl bg-white xl:flex-row xl:divide-x xl:divide-y-0"
 >
   <div
-    class="flex min-w-0 flex-1 flex-col items-start px-6 py-4 md:px-8 md:py-6"
+    class="flex min-w-0 flex-1 flex-col items-stretch justify-between px-2 py-4 md:px-4 md:py-6"
   >
-    <div class="mb-2 flex items-center text-base font-semibold text-slate-400">
-      <span class="mr-2 h-5 w-5 opacity-70">
+    <div
+      class="mb-2 flex min-h-[40px] items-start text-base font-semibold text-slate-400"
+    >
+      <span class="mr-2 flex h-5 w-5 items-start opacity-70">
         <Icon icon="mdi:cloud-upload-outline" width="20" />
       </span>
-      Resources Uploaded
+      <span class="flex items-start">Resources Uploaded</span>
     </div>
-    <div class="flex w-full items-end">
-      <span class="text-4xl font-bold text-gray-900"
+    <div class="flex w-full flex-1 items-end">
+      <span class="text-2xl font-bold text-gray-900"
         >{dashboardData.totalResources}</span
       >
       {#if resourcesTrend}
@@ -56,16 +58,18 @@
     </div>
   </div>
   <div
-    class="flex min-w-0 flex-1 flex-col items-start px-6 py-4 md:px-8 md:py-6"
+    class="flex min-w-0 flex-1 flex-col items-stretch justify-between px-2 py-4 md:px-4 md:py-6"
   >
-    <div class="mb-2 flex items-center text-base font-semibold text-slate-400">
-      <span class="mr-2 h-5 w-5 opacity-70">
+    <div
+      class="mb-2 flex min-h-[40px] items-start text-base font-semibold text-slate-400"
+    >
+      <span class="mr-2 flex h-5 w-5 items-start opacity-70">
         <Icon icon="mdi:check-circle-outline" width="20" />
       </span>
-      Completion Rate
+      <span class="flex items-start">Completion Rate</span>
     </div>
-    <div class="flex w-full items-end">
-      <span class="text-4xl font-bold text-gray-900"
+    <div class="flex w-full flex-1 items-end">
+      <span class="text-2xl font-bold text-gray-900"
         >{dashboardData.completionRate}%</span
       >
       {#if completionTrend}
@@ -79,19 +83,21 @@
     </div>
   </div>
   <div
-    class="flex min-w-0 flex-1 flex-col items-start px-6 py-4 md:px-8 md:py-6"
+    class="flex min-w-0 flex-1 flex-col items-stretch justify-between px-2 py-4 md:px-4 md:py-6"
   >
-    <div class="mb-2 flex items-center text-base font-semibold text-slate-400">
-      <span class="mr-2 h-5 w-5 opacity-70">
+    <div
+      class="mb-2 flex min-h-[40px] items-start text-base font-semibold text-slate-400"
+    >
+      <span class="mr-2 flex h-5 w-5 items-start opacity-70">
         <Icon icon="mdi:account-group-outline" width="20" />
       </span>
-      Unique Access
+      <span class="flex items-start">Unique Access</span>
     </div>
-    <div class="flex w-full items-end">
-      <span class="text-4xl font-bold text-gray-900"
+    <div class="flex w-full flex-1 items-end">
+      <span class="text-2xl font-bold text-gray-900"
         >{dashboardData.uniqueAccessValue1}</span
       >
-      <span class="ml-2 text-4xl font-bold text-gray-900"
+      <span class="ml-2 text-2xl font-bold text-gray-900"
         >/ {dashboardData.uniqueAccessValue2}</span
       >
       {#if uniqueAccessTrend}
