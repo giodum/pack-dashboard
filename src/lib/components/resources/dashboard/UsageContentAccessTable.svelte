@@ -106,7 +106,7 @@
       </tr>
     </thead>
     <tbody>
-      {#each table.rows as row (row.user.id)}
+      {#each table.rows as row, i (i)}
         <tr>
           <td><UserCell user={row.user} /></td>
           <td>{row.accessed_content}</td>
