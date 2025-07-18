@@ -21,12 +21,12 @@
   function convertToTableRows(data: UsageEntry[]) {
     if (!Array.isArray(data)) return [];
     return data.map((item) => ({
-      user: item.user, // pass user object
+      user: item.user,
       accessed_content: item.accessedContent,
       opened_on: item.openedOn,
       closed_on: item.closedOn,
       provider: item.provider,
-      actions: "" // placeholder
+      actions: ""
     }));
   }
 
