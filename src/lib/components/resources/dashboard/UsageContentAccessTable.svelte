@@ -21,6 +21,7 @@
 
   // Map usageData to table rows
   function convertToTableRows(data: UsageEntry[]) {
+    if (!Array.isArray(data)) return [];
     return data.map((item) => ({
       user: item.user, // pass user object
       accessed_content: item.accessedContent,
@@ -87,9 +88,12 @@
 </script>
 
 <Datatable {table}>
-  <div class="table-custom-header">
-    <Search {table} />
-    <RowsPerPage {table} />
+  <div class="mb-4 flex items-center justify-between gap-4">
+    <Search
+      {table}
+      class="!w-full !max-w-xs !rounded !border !border-gray-300 !px-2 !py-1"
+    />
+    <RowsPerPage {table} class="!ml-2" />
   </div>
   <table class="table w-full">
     <thead>
