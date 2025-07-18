@@ -41,8 +41,4 @@
   });
 </script>
 
-<div
-  class="mx-auto"
-  bind:this={chartContainer}
-  style="width: {width}; height: {height};"
-></div>
+<div bind:this={chartContainer} style="width: {width}; height: {height};"></div>

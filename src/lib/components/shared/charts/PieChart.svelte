@@ -34,26 +34,13 @@
       trigger: "item"
     },
     legend: {
-      orient: "horizontal",
-      left: "center",
-      top: "bottom",
-      show: true,
-      textStyle: {
-        color: "#90a2b9",
-        fontSize: 14
-      },
-      formatter: (name: string) => {
-        const item = data.find((d) => d.name === name);
-        if (!item || !total) return name;
-        const percent = ((item.value / total) * 100).toFixed(1);
-        return `${name} (${percent}%)`;
-      }
+      show: false
     },
     color: colors,
     series: [
       {
         type: "pie" as const,
-        radius: "50%",
+        radius: "60%",
         center: ["50%", "50%"],
         data: data,
         label: {
@@ -71,6 +58,20 @@
   });
 </script>
 
-<div class="flex w-full flex-col items-center">
-  <Chart {options} {width} height="360px" />
+<div class="flex w-full flex-row items-center">
+  <Chart {options} {width} {height} />
+  <div class="ml-6 flex flex-col space-y-2">
+    {#each data as item, i}
+      <div class="flex items-center space-x-2">
+        <span
+          style="display:inline-block;width:16px;height:16px;background:{colors[
+            i % colors.length
+          ]};border-radius:3px;"
+        ></span>
+        <span class="text-[14px] font-medium text-[#90a2b9]">
+          {item.name} ({((item.value / total) * 100).toFixed(1)}%)
+        </span>
+      </div>
+    {/each}
+  </div>
 </div>
